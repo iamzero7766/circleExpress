@@ -76,7 +76,7 @@ router.post("/addDiary", urlencodedParser, function (req, res, next) {
         }
         var params = req.body;
         console.log(params);
-        connection.query(querySql.add, [params.user_id, params.temp, params.dt_create, params.type, params.content], function (err, result) {
+        connection.query(querySql.add, [params.user_id, params.temp, params.dt_create, params.type, params.value, params.content], function (err, result) {
             if(err) {
                 console.log(err);
                 return;
@@ -101,7 +101,7 @@ router.post("/updateDiary", urlencodedParser, function (req, res, next) {
         }
         var params = req.body;
         console.log(params);
-        connection.query(querySql.update, [params.content, params.user_id, params.dt_create], function (err, result) {
+        connection.query(querySql.update, [params.content, params.value, params.user_id, params.dt_create], function (err, result) {
             if(err) {
                 console.log(err);
                 return;
