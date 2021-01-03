@@ -1,15 +1,19 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var formidable = require('formidable');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userInfoRouter = require('./routes/userInfo');
 var diaryRouter = require('./routes/diaryInfo');
+var questionRouter = require('./routes/questionInfo');
+var answerRouter = require('./routes/answerInfo');
 
 var app = express();
 //设置跨域访问
@@ -38,16 +42,58 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploadImage')));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: false }));
 
-app.use(express.static('./upload'));
+app.use(express.static('./uploadImage'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/userInfo', userInfoRouter);
 app.use('/diary', diaryRouter);
+app.use('/question', questionRouter);
+app.use('/answer', answerRouter);
+
+
+// 上传图片
+app.post('/image', (req, res, next) => {
+  let defaultPath = './uploadImage/';
+  let uploadDir = path.join(__dirname, defaultPath);
+  let form = new formidable.IncomingForm();
+  let getRandomID = () => Number(Math.random().toString().substr(4, 10) + Date.now()).toString(36)
+  form.uploadDir = uploadDir;  //设置上传文件的缓存目录
+  form.encoding = 'utf-8';        //设置编辑
+  form.keepExtensions = true;     //保留后缀
+  form.maxFieldsSize = 10 * 1024 * 1024;   //文件大小
+  form.parse(req, function (err, fields, files) {
+    if (err) {
+      res.locals.error = err;
+      res.render('index', { title: TITLE });
+      return;
+    }
+    let filePath = files.file['path'];
+    let backName = filePath.split('.')[1]
+    let oldPath = filePath.split('\\')[filePath.split('\\').length - 1];
+    let newPath = `${getRandomID()}.${backName}`;
+    console.log(filePath);
+    console.log(backName);
+    console.log(oldPath);
+    console.log(newPath);
+    fs.rename(defaultPath + oldPath, defaultPath + newPath, (err) => {//fs.rename重命名
+      if (!err) {
+        newPath = `http://localhost:3000/${newPath}`
+        res.json({ flag: true, path: newPath });
+      } else {
+        console.log(err);
+        res.json({ flag: false, path: '' });
+      }
+    })
+  })
+});
+
+
 
 
 
