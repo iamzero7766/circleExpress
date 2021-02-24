@@ -20,14 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df53a7a8-7f3d-4f02-89d2-cd74138207fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/circleExpress.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/answerSql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/answerSql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/querySql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/querySql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/questionSql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/questionSql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/answerInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/answerInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/questionInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/questionInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +59,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\express\circleExpress\server\uploadBack" />
+      <recent name="E:\express\circleExpress\server\uploadAvatar" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -71,7 +77,33 @@
       <updated>1609208682639</updated>
       <workItem from="1609208684781" duration="16338000" />
       <workItem from="1609573232777" duration="10950000" />
-      <workItem from="1609654722348" duration="8740000" />
+      <workItem from="1609654722348" duration="9734000" />
+      <workItem from="1609848151359" duration="1496000" />
+      <workItem from="1609930733357" duration="3529000" />
+      <workItem from="1610187954593" duration="5393000" />
+      <workItem from="1610535928048" duration="720000" />
+      <workItem from="1610620506790" duration="1928000" />
+      <workItem from="1610783100688" duration="5151000" />
+      <workItem from="1610858520867" duration="8345000" />
+      <workItem from="1611056178548" duration="2836000" />
+      <workItem from="1611138758754" duration="2711000" />
+      <workItem from="1611383191896" duration="1250000" />
+      <workItem from="1611457656894" duration="7255000" />
+      <workItem from="1611573418962" duration="3233000" />
+      <workItem from="1611833166676" duration="2620000" />
+      <workItem from="1612086466791" duration="2016000" />
+      <workItem from="1612264679167" duration="1282000" />
+      <workItem from="1612349803021" duration="4649000" />
+      <workItem from="1612600507280" duration="2064000" />
+      <workItem from="1612846659710" duration="1254000" />
+      <workItem from="1613104529848" duration="1201000" />
+      <workItem from="1613535907855" duration="3631000" />
+      <workItem from="1613628903383" duration="719000" />
+      <workItem from="1613645951854" duration="2591000" />
+      <workItem from="1613797826900" duration="3781000" />
+      <workItem from="1613888135115" duration="2996000" />
+      <workItem from="1614077207072" duration="1258000" />
+      <workItem from="1614159451944" duration="2046000" />
     </task>
     <servers />
   </component>
@@ -91,9 +123,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1078" y="293" key="FileChooserDialogImpl" timestamp="1609654748445">
+    <state x="1078" y="293" key="FileChooserDialogImpl" timestamp="1614159512276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1078" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609654748445" />
+    <state x="1078" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614159512276" />
+    <state x="842" y="147" width="596" height="798" key="find.popup" timestamp="1613649539440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="842" y="147" width="596" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613649539440" />
   </component>
 </project>

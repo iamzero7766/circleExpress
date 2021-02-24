@@ -46,6 +46,30 @@ router.post("/queryInfo", urlencodedParser, function (req, res, next) {
   })
 });
 
+router.post("/queryAll", urlencodedParser, function (req, res, next) {
+  pool.getConnection(function (err, connection) {
+    if(err) {
+      console.log(err);
+      return;
+    }
+    connection.query(querySql.queryAll, function (err, result) {
+      if(err) {
+        console.log(err);
+        return;
+      }
+      result = JSON.parse( JSON.stringify(result));
+      var code = {
+        status: 1,
+        msg: "成功！",
+        info: result
+      }
+      responseJSON(res, code);
+      connection.release();
+    })
+  })
+})
+
+
 router.post("/query", urlencodedParser, function (req, res, next) {
   pool.getConnection(function (err, connection) {
     if(err) {
@@ -56,8 +80,9 @@ router.post("/query", urlencodedParser, function (req, res, next) {
     connection.query(querySql.query, [params.start, params.num], function (err, result) {
       if(err) throw err
       result = JSON.parse( JSON.stringify(result));
+      console.log(result);
       async.map(result, function (item, callback) {
-        connection.query(answerSql.queryByQuestion, item.question_id, function (err, result0) {
+        connection.query(answerSql.queryQuestionInfo, [item.question_id, 0, 1], function (err, result0) {
           if(err) throw err;
           item.answeInfo = result0;
           callback(null, item);
@@ -176,6 +201,39 @@ router.post("/deleteQuestion", urlencodedParser, function (req, res, next) {
     })
   })
 });
+
+// 根据用户名搜索问题
+router.post("/queryByUser", urlencodedParser, function (req, res, next) {
+  pool.getConnection(function (err, connection) {
+    if(err) {
+      console.log(err);
+      return;
+    }
+    var params = req.body;
+    console.log(params);
+    connection.query(querySql.queryByUser, [params.id, params.start, params.end], function (err, result) {
+      if(err) throw err
+      result = JSON.parse( JSON.stringify(result));
+      async.map(result, function (item, callback) {
+        connection.query(answerSql.queryTotal, item.question_id , function (err, result0) {
+          if(err) throw err;
+          result0 = JSON.parse( JSON.stringify(result0));
+          item.total = result0[0]["COUNT(*)"];
+          callback(null, item);
+        });
+      }, function (err, results) {
+        var code = {
+          status: 1,
+          msg: "成功！",
+          info: results
+        }
+        responseJSON(res, code);
+        connection.release();
+      })
+    })
+
+  })
+})
 
 
 
