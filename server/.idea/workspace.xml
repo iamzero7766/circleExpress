@@ -22,12 +22,7 @@
     <list default="true" id="df53a7a8-7f3d-4f02-89d2-cd74138207fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/answerSql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/answerSql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/querySql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/querySql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/questionSql.js" beforeDir="false" afterPath="$PROJECT_DIR$/databases/questionSql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/answerInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/answerInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/questionInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/questionInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/userInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,9 @@
       <workItem from="1613797826900" duration="3781000" />
       <workItem from="1613888135115" duration="2996000" />
       <workItem from="1614077207072" duration="1258000" />
-      <workItem from="1614159451944" duration="2046000" />
+      <workItem from="1614159451944" duration="3308000" />
+      <workItem from="1614501117741" duration="1592000" />
+      <workItem from="1614683302943" duration="3319000" />
     </task>
     <servers />
   </component>
@@ -123,10 +120,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1078" y="293" key="FileChooserDialogImpl" timestamp="1614159512276">
+    <state x="1078" y="293" key="FileChooserDialogImpl" timestamp="1614688896966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1078" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614159512276" />
+    <state x="1078" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614688896966" />
     <state x="842" y="147" width="596" height="798" key="find.popup" timestamp="1613649539440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,3 +1,4 @@
+var compression = require('compression');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -20,6 +21,8 @@ var tagRouter = require("./routes/tagInfo");
 var commentRouter = require("./routes/commentInfo");
 
 var app = express();
+
+app.use(compression());
 //设置跨域访问
 app.all("*", function (req, res, next) {
     //设置允许跨域的域名，*代表允许任意域名跨域
@@ -40,7 +43,6 @@ app.all("*", function (req, res, next) {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -96,7 +98,7 @@ app.post('/image', (req, res, next) => {
     console.log(newPath);
     fs.rename(defaultPath + oldPath, defaultPath + newPath, (err) => {//fs.rename重命名
       if (!err) {
-        newPath = `http://localhost:3000/${newPath}`
+        newPath = `${newPath}`
         res.json({ flag: true, path: newPath });
       } else {
         console.log(err);
@@ -129,7 +131,7 @@ app.post('/backImage', (req, res, next) => {
     let newPath = 'back-' + `${getRandomID()}.${backName}`;
     fs.rename(defaultPath + oldPath, defaultPath + newPath, (err) => {//fs.rename重命名
       if (!err) {
-        newPath = `http://localhost:3000/${newPath}`
+        newPath = `${newPath}`
         res.json({ flag: true, path: newPath });
       } else {
         console.log(err);
@@ -160,7 +162,7 @@ app.post('/avatarImage', (req, res, next) => {
     let newPath = 'avatar-' + `${getRandomID()}.${backName}`;
     fs.rename(defaultPath + oldPath, defaultPath + newPath, (err) => {//fs.rename重命名
       if (!err) {
-        newPath = `http://localhost:3000/${newPath}`
+        newPath = `${newPath}`
         res.json({ flag: true, path: newPath });
       } else {
         console.log(err);
